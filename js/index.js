@@ -13,16 +13,17 @@ let generadorCards = () => {
             let search = carrito.find ( (x) => x.id === id) || []
         return `
         <div id=product-id-${id} class="item">
-            <img src="${img}" alt="">
+            <img src="${img}" alt="" class = "img-card">
             <div class="details">
                 <h3> ${nombre} </h3>
                 <p> ${desc} </p>
                 <div class="price-quantity">
                     <h2> $ ${price} </h2>
                     <div class="buttons">
-                        <i onclick="decrement(${id})" class="fa-solid fa-minus"></i>
-                        <div id=${id} class="quantity"> ${search.item === undefined ? 0 : search.item} </div>
-                        <i onclick="increment(${id})" class="fa-solid fa-plus"></i>
+                         <i onclick="decrement(${id})" class="fa-solid fa-minus"></i>
+                         <div id=${id} class="quantity"> ${search.item === undefined ? 0 : search.item} </div>
+                         <i onclick="increment(${id})" class="fa-solid fa-plus"></i>
+                        
                     </div>
                 </div>
             </div>

@@ -29,39 +29,48 @@
     </div>
 
 
-<div class="contenedor m-4 ">
-    <div class="modal-carrito  ">
+    <!-- ends Navbar -->
 
-        <div id="label" class="text-center"></div>
+    <div class="contenedor m-4 ">
+        <div class="modal-carrito  ">
 
-        <div class="d-flex justify-content-center mb-4">
-            <h3 class="text-center me-4 ">Mis pedidos</h3>
-        <button id="boton-carrito"><i class="fa-solid fa-cart-shopping"></i> <span id="contadorCarrito"> 0</span> </button>
+            
+
+            <div class="d-flex justify-content-center mb-4">
+                <h3 class="text-center me-4 ">Mis pedidos</h3>
+            <button id="boton-carrito"><i class="fa-solid fa-cart-shopping"></i> <span id="contadorCarrito"> 0</span> </button>
+            </div>
+
+            <div id="label" class="text-center"></div>
+
+             <!-- <div class="ms-5 mt-4" id="precioTotal">
+                 <p class="precioProducto">  <span id="precioTotal">  </span> </p>
+                <button id="vaciar-carrito" class="boton-agregar"><i class="fa-solid fa-trash-can"></i>Vaciar carrito</button> 
+            </div>  -->
+
+
+            
+            
+            <div id="carrito-contenedor" class="d-flex flex-column align-items-center" >
+            
+
+            </div>
+
+            <a href="productos.html" class="volver1 d-flex justify-content-center"> <button class="volver">Volver a realizar pedidos</button></a>
+            
+            
         </div>
-        
-        <div id="carrito-contenedor" >
-           
 
-        </div>
-
-        <div class="ms-5 mt-4">
-            <p class="precioProducto"> Precio total : $ <span id="precioTotal">0  </span> </p>
-        <button id="vaciar-carrito" class="boton-agregar"><i class="fa-solid fa-trash-can"></i>Vaciar carrito</button>
-        </div>
-        
-        
     </div>
 
-</div>
+    
 
-<a href="productos.html"> <button>Volver a realizar pedidos</button></a>
-
-<script src="js/productos.js"> </script> 
+    <script src="js/productos.js"> </script> 
     
     <script src="js/carrito.js"></script> 
     
     
-     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>

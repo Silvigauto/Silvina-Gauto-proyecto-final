@@ -14,13 +14,14 @@ fetch('js/platos.json')
                             <div class="card-body">
                                 <h5 class="card-title">${producto.titulo}</h5>
                                 <p class="card-text">${producto.descrip}</p>
-                                <a href="productos.html" class="btn btn-primary">Ir a realizar pedidos</a>
+                                <a href="productos.html" class="btn ">Ir a realizar pedidos</a>
                             </div>
                         </div>
                 `
         
     
     })
+
     
     //arrayPedidos = data
     

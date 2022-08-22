@@ -13,6 +13,7 @@ calculation();
 
 let carritoContenedor = document.getElementById('carrito-contenedor')
 let label = document.getElementById('label')
+let precioTotal = document.getElementById('precioTotal')
 
 
 
@@ -24,24 +25,25 @@ let generadorCarrito = () => {
                 let {id, item} = x;
                 let search = platos.find((y) => y.id === id ) || []
             return `
-            <div class=" cart-item"></div>
-            <img  src=${search.img} alt="" />
-            <div class = "details"> 
-                <div class= "title-price-x"> 
-                    <h4 class= "title-price"> 
-                        <p>${search.nombre} </p>
-                        <p>$ ${search.price} </p>
-                    </h4>
-                    <i onclick = "eliminar(${id})"class="fa-solid fa-trash"></i>
+                    <div class=" cart-item">
+                        <img  src=${search.img} alt="" class= "img-carrito" />
+                        <div class = "details"> 
+                            <div class= "title-price-x"> 
+                                <h4 class= "title-price"> 
+                                    <p>${search.nombre} </p>
+                                    <p  class="cart-item-price">$ ${search.price} </p>
+                                </h4>
+                                <i onclick = "eliminar(${id})"class="fa-solid fa-trash"></i>
 
-                </div>
-                <div class="buttons">
-                        <i onclick="decrement(${id})" class="fa-solid fa-minus"></i>
-                        <div id=${id} class="quantity">${item} </div>
-                        <i onclick="increment(${id})" class="fa-solid fa-plus"></i>
-                </div>
-                <h3> ${item * search.price} </h3>
-            </div>
+                            </div>
+                            <div class="buttons">
+                                <i onclick="decrement(${id})" class="fa-solid fa-minus"></i>
+                                <div id=${id} class="quantity">${item} </div>
+                                <i onclick="increment(${id})" class="fa-solid fa-plus"></i>
+                            </div>
+                            <h3 class = "precio-total"> $ ${item * search.price} </h3>
+                        </div>
+                    </div>
             `
         }).join(""))
     }
@@ -49,7 +51,7 @@ let generadorCarrito = () => {
     else {
         carritoContenedor.innerHTML = ``
         label.innerHTML = `
-        <h2> Cart is empty </h2>  `
+        <h2> El carrito esta vacio </h2>  `
     }
 }
 
@@ -108,6 +110,7 @@ let update = (id) => {
     // console.log(search.item);
     document.getElementById(id).innerHTML = search.item;
     calculation()
+    total()
 
 };
 
@@ -117,7 +120,36 @@ let eliminar = (id) => {
     // console.log(selectedItem.id)
     carrito = carrito.filter((x) => x.id !== selectedItem.id );
     generadorCarrito();
+    total();
+
     localStorage.setItem("data", JSON.stringify(carrito))
 
 }
 
+
+let total = () => {
+    if (carrito.length !==0) {
+        let total = carrito.map((x) => { 
+            // desestructuracion
+            let {item, id} = x;
+            let search = platos.find((y) => y.id === id ) || [];
+            
+            return item * search.price;
+         }).reduce((x,y) => x+y, 0)
+         label.innerHTML = `  
+                            <h2> Precio total: $ ${total} </h2>
+                            <button onclick="vaciarCarrito()" class="removeAll"> Vaciar carrito <i class="fa-solid fa-trash"></i></button>
+          `
+         
+         
+    } else return 
+}
+
+total()
+
+let vaciarCarrito = () => {
+    carrito = [];
+    generadorCarrito();
+    
+    localStorage.setItem("data", JSON.stringify(carrito))
+}
