@@ -147,9 +147,34 @@ let total = () => {
 
 total()
 
-let vaciarCarrito = () => {
-    carrito = [];
-    generadorCarrito();
+// let vaciarCarrito = () => {
+//     carrito = [];
+//     generadorCarrito();
     
-    localStorage.setItem("data", JSON.stringify(carrito))
+//     localStorage.setItem("data", JSON.stringify(carrito))
+//     Swal.fire('Tu carrito se ha vaciado')
+// }
+
+let vaciarCarrito = () => {
+    
+    Swal.fire({
+        title: '¿Estas seguro que quieres eliminar el carrito?',     
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        cancelButtonText: 'Cancelar',
+        confirmButtonText: 'Si, estoy seguro.'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire(
+            'Eliminado!',
+            'Has vaciado el carrito.',
+            'success'
+          )
+        carrito = [];
+        generadorCarrito();   
+        localStorage.setItem("data", JSON.stringify(carrito))
+        }
+      })
 }
