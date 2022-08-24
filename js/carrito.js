@@ -164,6 +164,7 @@ let vaciarCarrito = () => {
           )
         carrito = [];
         generadorCarrito();   
+        calculation();
         localStorage.setItem("data", JSON.stringify(carrito))
         }
       })
