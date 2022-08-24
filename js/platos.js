@@ -1,6 +1,6 @@
 // Platos traidos con fetch de archivo local platos.json
 
-//arrayPedidos = [];
+
 
 fetch('js/platos.json') 
 .then ( (res) => res.json() )
@@ -22,8 +22,7 @@ fetch('js/platos.json')
     
     })
 
-    
-    //arrayPedidos = data
+  
     
 
 }

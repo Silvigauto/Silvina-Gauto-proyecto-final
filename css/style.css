@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&family=Oswald:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nunito+Sans:wght@200&family=Oswald:wght@200&display=swap');
 
 /* Sobre nosotros html */
 .logo {
@@ -9,6 +9,7 @@
 
 .nav {
     background-color: #EB9B33;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 
@@ -47,16 +48,19 @@ h2 {
 .platos {
     background-color: #ffb24e;
 }
+
 .card {
     border-color: rgb(43, 26, 0) !important;
 }
+
 .card-body {
     background-color: rgb(240, 211, 149);
 }
- .btn {
+
+.btn {
     background-color: rgb(214, 145, 18) !important;
     color: white !important;
- }
+}
 
 
 footer {
@@ -64,17 +68,20 @@ footer {
     padding: 30px;
     color: white;
     font-size: 1.3em;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 
 /* Carrito de compras JS */
 
 .item {
-     background-color: rgb(241, 209, 148); 
+     
     margin: 20px;
     border-radius: 5px;
     border-style: solid ;
     border-width: 1px;
+    width: 200px;
+    box-shadow: 12px 13px 0px -3px rgba(0, 0, 0, 0.1);
     
 }
 
@@ -87,6 +94,7 @@ footer {
     text-align: center;
     padding: 5px;
     padding-bottom: 20px;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .buttons {
@@ -107,6 +115,10 @@ footer {
 
 .buttons .fa-plus:hover {
     color: green;
+}
+
+.misP {
+    font-family: 'Oswald', sans-serif;
 }
 
 
@@ -184,76 +196,4 @@ footer {
     
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .producto {
-    font-family: 'Oswald', sans-serif;
-    
-    margin: 10px;
-    margin-bottom: 20px;
-    box-shadow: 6px 4px 9px 0px rgba(201,201,201,0.6);
-    
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 0.1px;
-    
-} */
-
-
-/* .boton-agregar {
-    background-color: rgb(26, 95, 13);
-    border-style: none;
-    border-radius: 5px;
-    color: white;
-    padding: 7px;
-} */
-
-/* .boton-agregar:hover {
-    color: black;
-} */
-
-/* 
-.titulo-card {
-    padding-top: 5px;
-} */
-
-/* .productoEnCarrito {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 10px;
-} */
-
-
-
-
-
-
-
-/* .boton-eliminar {
-    background-color: rgb(226, 12, 12);
-    border: none;
-    border-radius: 5px;
-    color: white;
-} */
-
-
-
-/* 
-.img-prod {
-    height: 50px;
-    width: 65px;
-    border-radius: 15px;
-} */
 

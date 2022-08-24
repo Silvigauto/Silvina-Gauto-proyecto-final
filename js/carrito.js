@@ -1,7 +1,7 @@
 // carrito de compras
 let carrito = JSON.parse(localStorage.getItem("data")) || [];
 
-//console.log(carrito)
+
 
 let calculation = () => {
     let cartIcon = document.getElementById('contadorCarrito')
@@ -51,7 +51,7 @@ let generadorCarrito = () => {
     else {
         carritoContenedor.innerHTML = ``
         label.innerHTML = `
-        <h2> El carrito esta vacio </h2>  `
+        <h2> El carrito está vacio </h2>  `
     }
 }
 
@@ -73,7 +73,6 @@ let increment = (id) => {
     generadorCarrito();
     update(selectedItem.id)
     localStorage.setItem("data", JSON.stringify(carrito))
-    // console.log(carrito)
     
 }
 
@@ -83,9 +82,9 @@ let decrement = (id) => {
     let selectedItem = id;
 
     let search = carrito.find((x) =>x.id ===  selectedItem.id)
-// si el search no encuentra nada (undefined) va a parar la funcion con return
+
     if(search === undefined) return
-// cuando llegue a 0 para
+
     else if (search.item === 0) return;
      else  {
         search.item -=1
@@ -93,12 +92,10 @@ let decrement = (id) => {
     
     update(selectedItem.id)
 
-    // si el carrito tiene un item que esta en 0 lo elimina
-
     carrito = carrito.filter((x) => x.item !== 0);
 
     generadorCarrito();
-    // console.log(carrito)
+    
 
     localStorage.setItem("data", JSON.stringify(carrito))
 }
@@ -107,7 +104,7 @@ let decrement = (id) => {
 
 let update = (id) => {
     let search = carrito.find ((x) => x.id === id)
-    // console.log(search.item);
+
     document.getElementById(id).innerHTML = search.item;
     calculation()
     total()
@@ -117,7 +114,7 @@ let update = (id) => {
 
 let eliminar = (id) => {
     let selectedItem = id
-    // console.log(selectedItem.id)
+   
     carrito = carrito.filter((x) => x.id !== selectedItem.id );
     generadorCarrito();
     total();
@@ -147,13 +144,6 @@ let total = () => {
 
 total()
 
-// let vaciarCarrito = () => {
-//     carrito = [];
-//     generadorCarrito();
-    
-//     localStorage.setItem("data", JSON.stringify(carrito))
-//     Swal.fire('Tu carrito se ha vaciado')
-// }
 
 let vaciarCarrito = () => {
     
