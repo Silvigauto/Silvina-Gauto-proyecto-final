@@ -117,6 +117,7 @@ let eliminar = (id) => {
    
     carrito = carrito.filter((x) => x.id !== selectedItem.id );
     generadorCarrito();
+    calculation();
     total();
 
     localStorage.setItem("data", JSON.stringify(carrito))
@@ -136,6 +137,8 @@ let total = () => {
          label.innerHTML = `  
                             <h2> Precio total: $ ${total} </h2>
                             <button onclick="vaciarCarrito()" class="removeAll"> Vaciar carrito <i class="fa-solid fa-trash"></i></button>
+                            <a href="formulario.html"><button onclick="finalPedido()" class= "finalizar-pedido"> Finalizar pedido <i class="fa-solid fa-check"></i></button></a>
+                            
           `
          
          
@@ -169,3 +172,5 @@ let vaciarCarrito = () => {
         }
       })
 }
+
+
