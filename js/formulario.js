@@ -14,6 +14,7 @@ let formulario = document.getElementById('form')
 let arrayDatos =JSON.parse(localStorage.getItem('datosPersona'))||[];
 
 formulario.addEventListener('submit', (event) => {
+    
     event.preventDefault()
 
     let nodo = event.target.children
@@ -44,6 +45,7 @@ const generarInterfaz = () => {
     //localStorage.setItem('datosPersona', JSON.stringify(arrayDatos))
     
 }
+
 
 const pedidoFinalizado = () => {
     localStorage.clear()
