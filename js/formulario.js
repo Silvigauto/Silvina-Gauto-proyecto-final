@@ -9,6 +9,7 @@ class Datos {
 }
 
 let formulario = document.getElementById('form')
+let alertas = document.getElementById('warnings')
 
 
 let arrayDatos =JSON.parse(localStorage.getItem('datosPersona'))||[];
@@ -18,13 +19,37 @@ formulario.addEventListener('submit', (event) => {
     event.preventDefault()
 
     let nodo = event.target.children
-
     const dato = new Datos(nodo[0].value, nodo[1].value, nodo[2].value)
-  
-    arrayDatos.push(dato)
+        arrayDatos.push(dato)
+        generarInterfaz()
 
-    generarInterfaz()
+    
+    if (nodo[0].value.length === 0) {
+        Toastify({
+            text: "Ingresa un nombre valido",
+            duration: 3000
+        }).showToast();
+    }
 
+     if (nodo[1].value.length < 10 ) {
+        Toastify({
+            text: "Ingresa un teléfono valido",
+            duration: 3000
+        }).showToast();
+    }
+     if (nodo[2].value.length === 0) {
+        Toastify({
+            text: "Ingresa un domicilio valido",
+            duration: 3000
+        }).showToast();
+    }
+    // else if (nodo[0].value.length > 0 && nodo[1].value.length > 10 &&  nodo[2].value.length > 0)  {
+    //     const dato = new Datos(nodo[0].value, nodo[1].value, nodo[2].value)
+    //     arrayDatos.push(dato)
+    //     generarInterfaz()
+    // }
+    
+     
     //localStorage.setItem('datosPersona', JSON.stringify(arrayDatos))
 
 })
