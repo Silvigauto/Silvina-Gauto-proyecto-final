@@ -1,8 +1,9 @@
-// Elemntos traidos de productos.js al DOM
+// Elementos traidos de productos.js al DOM
 const contenedorProductos = document.getElementById('contendor-productos')
 
 let carrito = JSON.parse(localStorage.getItem("data")) || [];
 
+// Funcion que genera las cards de los productos 
 let generadorCards = () => {
 
     return (contenedorProductos.innerHTML = platos
@@ -35,6 +36,8 @@ let generadorCards = () => {
 
 generadorCards()
 
+// Funcion para cuando se aprieta el boton '+' 
+
 let increment = (id) => {
     let selectedItem = id;
 
@@ -64,7 +67,7 @@ let increment = (id) => {
     }).showToast();
 }
 
-
+// Funcion para cuando se aprieta el boton '-' 
 
 let decrement = (id) => {
     let selectedItem = id;
@@ -107,7 +110,7 @@ let update = (id) => {
 
 };
 
-
+// Funcion que calcula cuantos items tengo en el carrito
 
 
 let calculation = () => {

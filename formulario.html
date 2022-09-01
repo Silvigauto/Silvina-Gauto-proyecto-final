@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurante Davids</title>
+
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="css/bootstrap.min.css">   
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script src="https://kit.fontawesome.com/112a9fe9e6.js" crossorigin="anonymous"></script>
 </head>
@@ -30,9 +30,13 @@
 
 
     <!-- ends Navbar -->
+
+    <!-- Boton para volver al carrito -->
     <div class="d-flex justify-content-center">
         <a href="carrito.html"><button class="volver volver1 ">Volver a mis pedidos</button></a> 
     </div>
+
+    <!-- Formulario de datos -->
     
     <form action="" id="form" class="row d-flex flex-column align-items-center  mt-4 mb-4">
         <input class="mb-2 col-6" id="nombre" type="text" placeholder="Nombre" required>
@@ -41,16 +45,17 @@
     
        <button type="submit" id="btn-create" class="btn btn-success col-3">Enviar</button>
     </form>
-    <p id="alertas">
 
-    </p>
+
+
+    <!-- Seccion donde se genera card con los datos ingresados -->
 
     <section id="formDatos">
 
     </section>
 
    
-
+    <!-- Scripts -->
 
     <script src="js/formulario.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

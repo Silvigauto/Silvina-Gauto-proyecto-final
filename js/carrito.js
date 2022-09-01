@@ -16,7 +16,7 @@ let label = document.getElementById('label')
 let precioTotal = document.getElementById('precioTotal')
 
 
-
+// Funcion que me genera los cards en el carrito final
 let generadorCarrito = () => {
     if (carrito.length !== 0) {
         return (carritoContenedor.innerHTML = carrito
@@ -111,6 +111,7 @@ let update = (id) => {
 
 };
 
+// Funcion que elimina el prodcuto al apretar el icono eliminar
 
 let eliminar = (id) => {
     let selectedItem = id
@@ -146,6 +147,8 @@ let total = () => {
 }
 
 total()
+
+// Funcion para vaciar todo el carrito de compras con agregado de sweet alert
 
 
 let vaciarCarrito = () => {
